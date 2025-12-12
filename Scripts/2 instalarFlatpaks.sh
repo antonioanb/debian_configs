@@ -3,7 +3,7 @@
 # =================================================================
 # Script: instalar-flatpaks.sh
 # Instala Flatpaks úteis com muita cafeína, organizados por categoria.
-# Autor: antonio, com a juda do gpt "eu não sei muito sobre bash"
+# 
 # =================================================================
 
 # === Estilo e Cores ===

@@ -1,0 +1,124 @@
+# i3 config focado em Programação e Escrita
+set $mod Mod4
+
+# Fonte para interface (scannable e limpa)
+font pango:Inter Regular 10
+
+# --- APARÊNCIA (Foco total no conteúdo) ---
+# Remove barras de título e deixa bordas finas
+default_border pixel 2
+default_floating_border pixel 2
+# Espaçamento (Gaps) entre janelas (ajuda na leitura)
+gaps inner 10
+gaps outer 0
+
+# --- WORKSPACES (Produtividade) ---
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+
+# Navegação entre workspaces de forma mais rápida
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+Shift+Tab move container to workspace back_and_forth
+
+# Alternar entre layout tabbed/stacking/split (útil para código)
+bindsym $mod+w layout tabbed
+bindsym $mod+s layout stacking
+bindsym $mod+e layout toggle split
+
+# --- INICIALIZAÇÃO ---
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id nm-applet
+exec --no-startup-id xss-lock -- i3lock --nofork
+exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id dunst
+exec --no-startup-id ulauncher --hide-window
+
+# Se instalar o feh, descomente a linha abaixo para wallpaper:
+# exec_always --no-startup-id feh --bg-fill /caminho/para/seu/wallpaper.jpg
+
+#energia (não apagar a tela)
+exec_always --no-startup-id xset s off
+exec_always --no-startup-id xset -dpms
+
+# --- ATALHOS DE TECLADO ---
+
+# Áudio e Brilho
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+
+# Essenciais
+bindsym $mod+Return exec alacritty
+bindsym $mod+q kill
+bindsym $mod+d exec --no-startup-id ulauncher-toggle
+#bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+f fullscreen toggle
+
+# Navegação (VIM style corrigido para seu layout)
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+ccedilla focus right
+
+# Movimentação
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+ccedilla move right
+
+# Divisão
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# Troca de Workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+# Mover para Workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+
+# --- MODOS ---
+# Alternar janela para modo flutuante
+bindsym $mod+Shift+space floating toggle
+
+# Redimensionar (Mod+r)
+mode "resize" {
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym ccedilla resize grow width 10 px or 10 ppt  
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Sistema
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Sair do i3?' -B 'Sim' 'i3-msg exit'"
+
+#cores
+client.focused          #fbf1c7 #fbf1c7 #282828 #fbf1c7
+client.focused_inactive #504945 #504945 #fbf1c7 #504945
+client.unfocused        #3c3836 #3c3836 #a89984 #3c3836
+client.urgent           #fb4934 #fb4934 #282828 #fb4934
+
+
+
+# --- BARRA  ---
+bar {
+    # O parâmetro -c indica o caminho do arquivo de configuração
+    status_command i3status -c ~/.config/i3status.conf
+}

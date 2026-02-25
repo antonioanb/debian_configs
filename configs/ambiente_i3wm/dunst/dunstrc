@@ -1,0 +1,24 @@
+[global]
+    font = Monospace 10
+    # Geometria: largura x altura + posição_x + posição_y
+    geometry = "300x5-30+50"
+    frame_width = 2
+    frame_color = "#6a737d"
+    separator_color = frame
+    padding = 8
+    horizontal_padding = 8
+
+[urgency_low]
+    background = "#24292e"
+    foreground = "#959da5"
+
+[urgency_normal]
+    background = "#24292e"
+    foreground = "#d1d5da"
+    timeout = 5
+
+[urgency_critical]
+    background = "#24292e"
+    foreground = "#d1d5da"
+    frame_color = "#d73a49"
+    timeout = 0

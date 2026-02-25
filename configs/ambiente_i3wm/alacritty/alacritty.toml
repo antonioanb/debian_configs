@@ -1,0 +1,39 @@
+[colors.primary]
+background = '#000000'
+foreground = '#ffffff'
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Italic"
+
+[colors.normal]
+black   = '#1c1c1c' 
+red     = '#ff0000' 
+green   = '#00ff00' 
+yellow  = '#ffff00' 
+blue    = '#4d4dff' 
+magenta = '#ff00ff' 
+cyan    = '#00ffff'  
+white   = '#eeeeee' 
+
+
+[colors.bright]
+black   = '#767676'
+red     = '#ff5f5f'
+green   = '#5fff5f'
+yellow  = '#ffff5f'
+blue    = '#87afff'
+magenta = '#ff5fff'
+cyan    = '#5fffff'
+white   = '#ffffff'

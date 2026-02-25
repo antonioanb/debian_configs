@@ -109,12 +109,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Sistema
+# --- Sistema ---
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Sair do i3?' -B 'Sim' 'i3-msg exit'"
 
-#cores
+# cores
 client.focused          #8BE9FD #8BE9FD #282828 #8BE9FD
 client.focused_inactive #504945 #504945 #fbf1c7 #504945
 client.unfocused        #3c3836 #3c3836 #a89984 #3c3836
@@ -123,7 +123,24 @@ client.urgent           #fb4934 #fb4934 #282828 #fb4934
 
 
 # --- BARRA  ---
+
 bar {
-    # O parâmetro -c indica o caminho do arquivo de configuração
     status_command i3status -c ~/.config/i3status.conf
+    position bottom
+    
+    # Removido o comando force-xinerama que causava o sumiço da barra
+    
+    colors {
+        # Fundo da barra 
+        background #05070a
+        # Cor do texto geral da barra
+        statusline #DCDCDC
+        separator  #44475a
+
+        # Estilo dos Workspaces         Borda   Fundo   Texto
+        focused_workspace          #8BE9FD #8BE9FD #05070a
+        active_workspace           #44475a #44475a #DCDCDC
+        inactive_workspace         #05070a #05070a #808080
+        urgent_workspace           #FF5555 #FF5555 #DCDCDC
+    }
 }

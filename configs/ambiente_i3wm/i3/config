@@ -6,11 +6,14 @@ font pango:Inter Regular 10
 
 # --- APARÊNCIA (Foco total no conteúdo) ---
 # Remove barras de título e deixa bordas finas
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
 # Espaçamento (Gaps) entre janelas (ajuda na leitura)
-gaps inner 6
-gaps outer 5
+gaps inner 10
+gaps outer 0
+
+
+
 
 # --- WORKSPACES (Produtividade) ---
 set $ws1 "1"
@@ -55,7 +58,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 # Essenciais
 bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
-bindsym $mod+d exec --no-startup-id ulauncher-toggle
+# Substitua a sua linha atual por esta:
+bindsym $mod+d exec --no-startup-id ulauncher-toggle || ulauncher-toggle || dbus-send --name=io.ulauncher.Ulauncher --dest=io.ulauncher.Ulauncher --type=method_call /io/ulauncher/Ulauncher io.ulauncher.Ulauncher.ToggleWindow
 #bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+f fullscreen toggle
 
@@ -102,6 +106,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
 bindsym $mod+r mode "resize"
 
 # Sistema
@@ -110,7 +115,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Sair do i3?' -B 'Sim' 'i3-msg exit'"
 
 #cores
-client.focused          #47381B #47381B #282828 #47381B
+client.focused          #8BE9FD #8BE9FD #282828 #8BE9FD
 client.focused_inactive #504945 #504945 #fbf1c7 #504945
 client.unfocused        #3c3836 #3c3836 #a89984 #3c3836
 client.urgent           #fb4934 #fb4934 #282828 #fb4934

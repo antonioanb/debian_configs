@@ -9,8 +9,8 @@ font pango:Inter Regular 10
 default_border pixel 2
 default_floating_border pixel 2
 # Espaçamento (Gaps) entre janelas (ajuda na leitura)
-gaps inner 10
-gaps outer 0
+gaps inner 6
+gaps outer 5
 
 # --- WORKSPACES (Produtividade) ---
 set $ws1 "1"
@@ -110,7 +110,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Sair do i3?' -B 'Sim' 'i3-msg exit'"
 
 #cores
-client.focused          #fbf1c7 #fbf1c7 #282828 #fbf1c7
+client.focused          #47381B #47381B #282828 #47381B
 client.focused_inactive #504945 #504945 #fbf1c7 #504945
 client.unfocused        #3c3836 #3c3836 #a89984 #3c3836
 client.urgent           #fb4934 #fb4934 #282828 #fb4934

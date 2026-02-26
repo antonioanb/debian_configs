@@ -1,28 +1,41 @@
 {
     "workbench.iconTheme": "vs-nomo-dark",
-    "workbench.colorTheme": "After Dark",
-    "editor.fontFamily":"Hack Nerd Font Mono",
+    "workbench.colorTheme": "Dracula Theme",
+    "editor.fontFamily": "Hack Nerd Font Mono",
     "editor.fontSize": 15,
     "editor.cursorBlinking": "expand",
     "editor.wordWrap": "on",
-    "window.menuBarVisibility":"compact",
+    "window.menuBarVisibility": "compact",
 
     "workbench.colorCustomizations": {
-    "editor.background": "#05070a",
-    "sideBar.background": "#05070a",
-    "activityBar.background": "#05070a",
-    "terminal.background": "#05070a"
-},
+        // --- FUNDO ESCURO ---
+        "editor.background": "#05070a",
+        "sideBar.background": "#05070a",
+        "activityBar.background": "#05070a",
+        "terminal.background": "#05070a",
 
-"editor.tokenColorCustomizations": {
-    "textMateRules": [
-        {
-            "scope": "comment",
-            "settings": {
-                "foreground": "#5C6370",
-                "fontStyle": "italic"
+        // --- MATANDO O ROSA DA INTERFACE DRACULA---
+        "activityBar.activeBorder": "#6272a4",      // Linha lateral do ícone ativo
+        "activityBar.foreground": "#6272a4",        // Cor do ícone lateral ativo
+        //"tab.activeBorder": "#8BE9FD",              // Linha embaixo da aba aberta
+        "tab.activeBorderTop": "#6272a4",           // Linha em cima da aba 
+        "notificationBadge.background": "#8BE9FD",  // Aquela bolinha com número de avisos
+        "activityBarBadge.background": "#6272a4",   // Bolinha de notificação na barra lateral
+        "list.activeSelectionForeground": "#44475a", // Texto do arquivo selecionado na esquerda
+        "progressBar.background": "#6272a4"         // Barrinha de carregamento
+    },
+
+    
+
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": {
+                    "foreground": "#343746",
+                    "fontStyle": "italic"
+                }
             }
-        }
-    ]
-}
+        ]
+    }
 }

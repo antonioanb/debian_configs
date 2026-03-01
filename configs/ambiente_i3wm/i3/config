@@ -35,10 +35,11 @@ bindsym $mod+e layout toggle split
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
 exec --no-startup-id xss-lock -- i3lock --nofork
-exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
+exec_always --no-startup-id killall picom; picom -b
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst
 exec --no-startup-id ulauncher --hide-window
+exec --no-startup-id lxpolkit &
 
 # Se instalar o feh, descomente a linha abaixo para wallpaper:
 # exec_always --no-startup-id feh --bg-fill /caminho/para/seu/wallpaper.jpg
@@ -115,7 +116,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Sair do i3?' -B 'Sim' 'i3-msg exit'"
 
 # cores
-client.focused          #8BE9FD #8BE9FD #282828 #8BE9FD
+client.focused          #44475a #44475a #282828 #44475a
 client.focused_inactive #504945 #504945 #fbf1c7 #504945
 client.unfocused        #3c3836 #3c3836 #a89984 #3c3836
 client.urgent           #fb4934 #fb4934 #282828 #fb4934
@@ -138,7 +139,7 @@ bar {
         separator  #44475a
 
         # Estilo dos Workspaces         Borda   Fundo   Texto
-        focused_workspace          #8BE9FD #8BE9FD #05070a
+        focused_workspace          #44475a #44475a #05070a
         active_workspace           #44475a #44475a #DCDCDC
         inactive_workspace         #05070a #05070a #808080
         urgent_workspace           #FF5555 #FF5555 #DCDCDC

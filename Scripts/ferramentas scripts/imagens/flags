@@ -1,0 +1,10 @@
+#Flags
+limpador.sh -r
+renomeador.sh -p aniversario -z -r -s 30
+#              │              │  │  │
+#                             │  │  └── Começa do 30
+#                             │  └───── Recursivo
+#                             └──────── Zeros (001)
+#              └─────────── Prefixo
+
+Dica: limpar metadados antes de tudo
